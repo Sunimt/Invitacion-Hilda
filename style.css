@@ -1,0 +1,338 @@
+/* Variables de color y tipografía */
+:root {
+    --primary-color: #e8b9b9; /* Rosa palo */
+    --secondary-color: #f7e6e6; /* Rosa más claro para fondos */
+    --text-color-dark: #634646; /* Tono de marrón/rojo oscuro para textos */
+    --text-color-light: #7a5c5c; /* Tono intermedio para párrafos */
+
+    /* Fuentes personalizadas para un estilo más elegante */
+    --heading-font-fancy: 'Playfair Display', serif; /* Para nombres principales */
+    --heading-font-bold: 'Montserrat', sans-serif; /* Para subtítulos y números */
+    --body-font: 'Montserrat', sans-serif; /* Para texto general */
+}
+
+body {
+    font-family: var(--body-font);
+    background: #fdfafa;
+    color: var(--text-color-dark);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Tamaños de fuentes generales --- */
+h1, h2, h3, h4 {
+    font-family: var(--heading-font-bold);
+    font-weight: 700;
+    color: var(--text-color-dark);
+    margin: 0;
+}
+
+h1 { font-size: 2.5rem; } /* Grande para nombres, usa rem para escalabilidad */
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1rem; }
+
+p {
+    font-family: var(--body-font);
+    font-size: 0.9rem; /* Un poco más pequeño y legible para párrafos */
+    font-weight: 400;
+    color: var(--text-color-light);
+}
+
+/* --- Portada (Ajustes de tamaño) --- */
+.portada {
+    position: relative; 
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinea abajo para ver las caras */
+    align-items: center; 
+    color: white;
+    overflow: hidden; 
+}
+
+.portada-imagen-contenedor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.portada-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    filter: brightness(0.7);
+}
+
+.portada-contenido {
+    position: relative;
+    z-index: 10;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 2px;
+    padding-bottom: 50px; 
+}
+
+.portada h2 {
+    font-family: var(--body-font);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white; 
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.portada h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem; /* Un tamaño grande pero estético para los nombres */
+    font-weight: normal;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.portada p {
+    font-family: var(--body-font);
+    font-size: 1rem;
+    color: white;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* --- Estilos generales de secciones --- */
+.invitacion-contenido {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.seccion {
+    margin: 30px 0;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* --- Contador --- */
+.contador h3 {
+    font-family: var(--heading-font-bold);
+    color: var(--text-color-dark);
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.tiempo {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tiempo small {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-color-light);
+    font-weight: normal;
+}
+
+.fecha {
+    margin-top: 25px;
+    font-weight: bold;
+    color: var(--text-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.fecha .dia {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.fecha .numero {
+    font-family: var(--heading-font-bold);
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--text-color-dark);
+}
+
+.fecha .mes {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+/* --- Estilos generales de la sección --- */
+.seccion {
+    /* ... otros estilos de sección ... */
+}
+
+/* --- Estilos para el contenedor de la fecha --- */
+.fecha-seccion {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.fecha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.fecha-container .dia,
+.fecha-container .mes {
+    font-size: 1.2rem; /* Aumentado de 0.9rem a 1.2rem */
+    font-weight: 500;
+    color: var(--text-color-light);
+    letter-spacing: 1px;
+}
+
+.fecha-container .numero {
+    font-size: 3rem;
+    color: var(--text-color-dark);
+    font-weight: 700;
+}
+
+/* --- Estilos para las líneas horizontales --- */
+.linea {
+    width: 40px;
+    height: 1px;
+    background-color: var(--text-color-light);
+}
+
+/* --- Otros estilos de secciones (detalles, programa, redes) --- */
+/* Asegúrate de mantener el resto de tu CSS para estas secciones. */
+
+/* --- Detalles --- */
+.detalle h3 {
+    font-family: var(--heading-font-bold);
+    color: var(--text-color-dark);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.detalle h3 i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.detalle p {
+    color: var(--text-color-light);
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+    font-family: var(--body-font);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    background: var(--text-color-dark);
+}
+
+/* --- Programa y Redes --- */
+.programa h3 {
+    font-family: var(--heading-font-bold);
+    color: var(--text-color-dark);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.programa ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.programa li {
+    margin: 12px 0;
+    color: var(--text-color-light);
+}
+
+.programa li b {
+    color: var(--text-color-dark);
+    margin-right: 8px;
+    font-weight: 600;
+}
+
+.redes h3 {
+    font-family: var(--heading-font-bold);
+    color: var(--text-color-dark);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.redes p {
+    color: var(--text-color-light);
+    margin-bottom: 8px;
+}
+
+.redes p:last-of-type {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+/* --- Media Query para Vista de Computadora (Mayor a 768px) --- */
+@media (min-width: 768px) {
+    .portada {
+        height: 600px;
+    }
+
+    .portada-imagen {
+        object-fit: contain;
+        background-color: var(--secondary-color);
+    }
+
+    .invitacion-contenido {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    /* Ajustes específicos para escritorio */
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    p { font-size: 1rem; }
+    
+    .portada h1 { font-size: 5rem; }
+    .portada h2 { font-size: 1.5rem; }
+    .portada p { font-size: 1.2rem; }
+
+    .tiempo { font-size: 1.8rem; }
+    .tiempo small { font-size: 0.8rem; }
+    .fecha .numero { font-size: 3.5rem; }
+}
