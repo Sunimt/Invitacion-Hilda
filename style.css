@@ -20,6 +20,50 @@ body {
     padding: 0;
 }
 
+/* --- Mensaje para Escritorio --- */
+.mensaje-escritorio {
+    display: none; /* Por defecto, oculta el mensaje */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fdfafa; /* Color de fondo de tu body */
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mensaje-escritorio .titulo-mensaje {
+    font-family: var(--heading-font-fancy);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--text-color-dark);
+    margin-bottom: 20px;
+}
+
+.mensaje-escritorio .texto-mensaje {
+    font-family: var(--body-font);
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+/* --- Media Query para Escritorio --- */
+/* Muestra el mensaje solo en pantallas grandes (ancho de 769px o más) */
+@media (min-width: 769px) {
+    .mensaje-escritorio {
+        display: flex; /* Muestra el mensaje en escritorio */
+    }
+
+    body > *:not(.mensaje-escritorio) {
+        display: none; /* Oculta todo el contenido de la invitación en escritorio */
+    }
+}
+
 /* --- Tamaños de fuentes generales --- */
 h1, h2, h3, h4 {
     font-family: var(--heading-font-bold);
@@ -176,10 +220,22 @@ p {
     font-weight: normal;
 }
 
-/* --- Estilos generales de la sección --- */
-.seccion {
-    /* ... otros estilos de sección ... */
+/* --- imagen calendario --- */
+.imagen-calendario {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%); /* "hack" para salir del max-width */
 }
+
+.imagen-mes {
+  width: 100vw;
+  height: auto;
+  display: block;
+}
+
+
+
+/* --- Estilos generales de la sección --- */
+
 
 /* --- Estilos para el contenedor de la fecha --- */
 .fecha-seccion {
@@ -335,4 +391,303 @@ p {
     .tiempo { font-size: 1.8rem; }
     .tiempo small { font-size: 0.8rem; }
     .fecha .numero { font-size: 3.5rem; }
+}
+
+/*como llegar  */
+
+.detalle .btn {
+  margin-bottom: 15px; /* espacio debajo del botón */
+  display: inline-block;
+}
+
+.detalle h3 {
+  margin-top: 20px; /* espacio arriba del título siguiente */
+}
+
+.rosas-comollegar {
+  display: block;
+  margin: 5px auto 0; /* espacio arriba y centrada */
+  max-width: 250px;    /* ajusta el tamaño a lo que quieras */
+  height: auto;
+}
+
+/* sugerencia regalo*/
+
+.seccion.programa {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 20px 25px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-family: 'Georgia', serif;
+}
+
+.seccion.programa h3 {
+    color: var(--text-color-dark);
+    font-size: 1.6em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.seccion.programa p {
+    color: var(--text-color-light);
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.icono-sobre img {
+    width: 60px; /* tamaño mediano */
+    margin-top: 15px;
+}
+
+
+
+/* --- Contenedor de la Imagen y Cita --- */
+.invitacion-novios {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+}
+
+.invitacion-novios img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cita-novios {
+    position: absolute;
+    bottom: 5%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 90%; 
+    max-width: 800px;
+    text-align: center;
+    
+    /* CAMBIO CLAVE AQUÍ */
+    color: white !important; /* ¡Usa !important para forzar el color! */
+    
+    /* Agrega un filtro para hacer que el texto resalte */
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.9)) drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5));
+    
+    padding: 15px; 
+    box-sizing: border-box;
+    background: none; 
+    border-radius: 0; 
+}
+
+/* Ahora el párrafo hereda el color de su contenedor padre */
+.cita-novios p {
+    margin: 0;
+    font-family: var(--heading-font-fancy);
+    font-size: clamp(1.2rem, 5vw, 2.5rem); 
+    line-height: 1.4; 
+    font-weight: 700;
+    color: inherit; /* Asegura que sea blanco heredando del contenedor */
+}
+
+.referencia-biblica {
+    font-family: var(--body-font); 
+    font-size: clamp(1rem, 3.5vw, 1.8rem);
+    margin-top: 15px; 
+    opacity: 0.9;
+    font-weight: 500;
+    color: inherit; /* Blanco también para la referencia */
+}
+
+/* --- Media query para asegurar que no haya márgenes en pantallas pequeñas --- */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    .invitacion-novios {
+        padding: 0;
+        margin: 0;
+        width: 100vw; 
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+/* --- Vestimenta --- */
+
+.seccion-vestimenta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f8f8; /* Fondo suave */
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    transition: transform 0.2s;
+}
+
+.seccion-vestimenta:hover {
+    transform: translateY(-3px); /* Pequeño efecto hover */
+}
+
+.icono-formal img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.info-vestimenta h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.info-vestimenta p {
+    margin: 5px 0 0 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 500px) {
+    .seccion-vestimenta {
+        flex-direction: column;
+        text-align: center;
+    }
+    .icono-formal {
+        margin-top: 10px;
+    }
+}
+
+
+/* --- Apartar lugar --- */
+
+/* --- Sección de Confirmación de Asistencia --- */
+.seccion-confirmacion {
+    margin: 40px auto; /* Espacio superior e inferior */
+    padding: 30px 20px;
+    max-width: 600px; /* Ancho máximo para mantener la legibilidad */
+    background: var(--secondary-color); /* Fondo claro de tus variables */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.icono-whatsapp img {
+    width: 70px; /* Tamaño del icono */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.titulo-confirmacion {
+    font-family: 'Dancing Script', cursive; /* Fuente elegante como en tu ejemplo */
+    font-size: clamp(2rem, 6vw, 3.5rem); /* Grande y responsivo */
+    color: var(--text-color-dark);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.mensaje-principal {
+    font-family: var(--heading-font-fancy); /* Fuente Playfair Display para un toque elegante */
+    font-size: clamp(1.1rem, 3.5vw, 1.6rem); /* Un poco más grande para el mensaje clave */
+    color: var(--text-color-dark);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.instrucciones {
+    font-family: var(--body-font);
+    font-size: clamp(0.9rem, 2.8vw, 1.1rem);
+    color: var(--text-color-light);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 500px; /* Para que el texto no se extienda demasiado */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-confirmacion {
+    display: inline-block;
+    background: none; /* Sin fondo sólido */
+    color: var(--text-color-dark); /* Color de texto oscuro */
+    border: 2px solid var(--text-color-dark); /* Borde con tu color oscuro */
+    padding: 12px 30px;
+    border-radius: 30px; /* Más redondeado para parecerse a la imagen */
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-confirmacion:hover {
+    background: var(--text-color-dark); /* Fondo oscuro al pasar el ratón */
+    color: white; /* Texto blanco al pasar el ratón */
+    transform: translateY(-3px); /* Pequeño efecto al pasar el ratón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Asegúrate de importar 'Dancing Script' si no la tienes ya */
+/* Agrega esto en tu <head> si no lo has hecho: */
+/* <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet"> */
+
+/* --- Sección para la foto de los novios --- */
+.seccion-novios {
+    width: 100vw; /* Usa el ancho total del viewport (pantalla) */
+    margin-left: calc(-50vw + 50%); /* Centra el contenedor para eliminar márgenes */
+    padding: 0;
+    overflow: hidden;
+}
+
+.seccion-novios img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Opcional: Para el cuerpo del documento */
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Sección Final --- */
+
+
+.seccion-final .seccion-contenido {
+    padding: opx;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.despedida-simple {
+    font-family: var(--body-font);
+    font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+    color: var(--text-color-dark);
+    margin-bottom: 10px;
+}
+
+.despedida-elegante {
+    font-family: 'Dancing Script', cursive; /* Usa la misma fuente elegante */
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    color: var(--text-color-dark);
+    margin-bottom: 30px;
+}
+
+.anillos-container img {
+    width: clamp(100px, 15vw, 150px);
+    height: auto;
 }
