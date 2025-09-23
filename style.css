@@ -691,3 +691,42 @@ body {
     width: clamp(100px, 15vw, 150px);
     height: auto;
 }
+
+/* --- Animaciones de Entrada --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Clases para aplicar las animaciones */
+.animar-al-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animar-al-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 1.2s forwards;
+}
+
+.slide-up.animar-al-scroll.visible {
+    animation: slideInUp 1.2s forwards;
+}

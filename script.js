@@ -28,3 +28,23 @@ setInterval(actualizarCuenta, 1000);
 
 // Llamar a la función una vez al principio para evitar el parpadeo inicial
 actualizarCuenta();
+
+// animaciones
+document.addEventListener("DOMContentLoaded", function() {
+    const elementosAnimar = document.querySelectorAll('.animar-al-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2 // Se activa cuando el 20% del elemento es visible
+    });
+
+    elementosAnimar.forEach(elemento => {
+        observer.observe(elemento);
+    });
+});
