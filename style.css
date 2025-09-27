@@ -110,7 +110,7 @@ p {
     height: 100%;
     object-fit: cover; 
     object-position: center; 
-    filter: brightness(0.7);
+  
 }
 
 .portada-contenido {
@@ -148,6 +148,19 @@ p {
     margin-top: 10px;
     text-transform: uppercase;
     font-weight: 500;
+}
+
+.mensaje-boda {
+  max-width: 80%;          /* Espacio a los lados */
+  margin: 20px auto;       /* Centrado */
+  text-align: center;      /* Texto centrado */
+}
+
+.mensaje-boda p {
+  font-size: 16px;         /* Más pequeño */
+  font-weight: bold;       /* Negrita */
+  line-height: 1.6;        /* Espaciado entre líneas */
+  color: #7a5c5c;          /* Un tono elegante */
 }
 
 /* --- Estilos generales de secciones --- */
